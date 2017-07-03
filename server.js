@@ -17,6 +17,7 @@ mongoose.Promise = Promise;
 
 // Initialize Express
 var app = express();
+var PORT =  process.env.PORT || 3000;
 
 // Use morgan and body parser with our app
 app.use(logger("dev"));
@@ -28,7 +29,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/natgeodb");
+mongoose.connect("mongodb://heroku_qpg521p2:isk2b5bjft3eltu0lgboi32p27@ds145292.mlab.com:45292/heroku_qpg521p2" || "mongodb://localhost/natgeodb");
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -151,6 +152,6 @@ app.post("/articles/:id", function(req, res) {
 });
 
 // Listen on port 3000
-app.listen(3000, function() {
-  console.log("App running on port 3000!");
+app.listen(PORT, function() {
+  console.log("App running on port " + PORT + " !");
 });
