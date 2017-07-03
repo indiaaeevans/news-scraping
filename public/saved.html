@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>NatGeo Library | Saved Articles</title>
+  <!-- CSS and FONTS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <!-- NAV BAR -->
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="/" class="brand-logo amber-text text-lighten-1">
+      <img id="nglogo" src="./images/logo.jpg" alt="National Geographic Logo">
+      NGL
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/">Home</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  
+  <!-- PAGE CONTENT-->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <h1 class="header center grey-text text-lighten-5 saved-header">Saved Articles</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">View and add comments to your community's saved articles</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+      <img class="background-image" src="./images/people.jpg" alt="People background">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">    
+      <div class="row" id="savedarticles">
+        <!-- ARTICLE CARD EXAMPLE-->
+        <!--<div class="col s12 m4">
+          <div class="card blue lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">Card Title</span>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Read Story</a>
+              <a href="#"><i class="tooltipped comment material-icons" data-position="right" data-delay="50" data-tooltip="Comment on this article">message</i></a>             
+            </div>
+          </div>
+        </div>-->
+
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Visit the home page to view the latest articles</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img class="background-image" src="./images/fish.jpg" alt="Fish background"></div>
+  </div>
+
+  <!-- STICKY FOOTER -->
+  <footer class="page-footer blue darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">National Geographic</h5>
+          <p class="grey-text text-lighten-4">
+            We are the world’s leading multimedia destination for the best stories in science, exploration and adventure. Nearly 30% of our profits go to funding real scientists, explorers, and conservationists.
+          </p>
+        </div>     
+        <div class="col l3 s12 offset-l3">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://www.facebook.com/natgeo">Facebook</a></li>
+            <li><a class="white-text" href="https://twitter.com/NatGeo">Twitter</a></li>
+            <li><a class="white-text" href="https://www.instagram.com/natgeo/">Instagram</a></li>
+            <li><a class="white-text" href="https://www.youtube.com/natgeo">Youtube</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Modal for Adding a new Comment -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Add a Comment</h4>
+      <!-- FORM INPUT -->
+      <div class="row">
+        <form class="col s12">
+          <!--Comment-->
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="bodyinput" class="materialize-textarea"></textarea>
+              <label for="bodyinput">New Comment:</label>
+            </div>
+          </div>
+          <!--Name-->
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="nameinput" type="email" class="validate">
+              <label for="name">Name</label>
+            </div>
+            <!-- FORM SUBMIT BUTTON-->
+            <div class="col s2 offset-s2 right-align">
+              <button id="submit" class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit
+                <i class="material-icons right">input</i>
+              </button>
+            </div>
+          </div>        
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+    </div>
+  </div>
+
+  <!-- Modal for Viewing an Article's Comments -->
+  <div id="modal2" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Community Comments</h4>
+      <!--COMMENTS-->
+      <div class="row"><p>
+        <div class="col s3" id="commentname">Name :</div>
+        <div class="col s7" id="commentbody">Maecenas et tempor risus. Praesent vitae enim tincidunt odio malesuada bibendum pulvinar ac tortor. Aenean eu nibh ut nulla semper semper. Nam non mi feugiat, tincidunt velit eu, blandit diam.</div> 
+        <div class="col s2">           
+          <a href="/delete">
+            <i class="tooltipped comment material-icons" data-position="right" data-delay="50" data-tooltip="Delete this comment">delete</i>
+          </a>
+        </div></p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/saved.js"></script>
+  <script src="js/init.js"></script>
+</body>
+</html>
